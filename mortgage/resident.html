@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Residential Project</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#floor-plan">Floor Plan</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#concept">Concept</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#calculator">Mortgage Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Home</h2>
+        <p>Discover our modern residential project with top amenities.</p>
+    </section>
+    
+    <section id="floor-plan">
+        <h2>Floor Plans</h2>
+        <p>Choose from 1BHK, 2BHK, and 3BHK layouts.</p>
+    </section>
+    
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <p>View stunning images of our project.</p>
+    </section>
+    
+    <section id="concept">
+        <h2>Concept</h2>
+        <p>Our architectural vision and sustainable design.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+    <section id="calculator">
+        <h2>Mortgage Calculator</h2>
+        <label>Loan Amount: <input type="number" id="loanAmount"></label>
+        <label>Interest Rate: <input type="number" id="interestRate"></label>
+        <label>Loan Tenure (years): <input type="number" id="loanTenure"></label>
+        <button onclick="calculateMortgage()">Calculate</button>
+        <p id="result"></p>
+    </section>
+    
+    <script>
+        function calculateMortgage() {
+            let loan = document.getElementById('loanAmount').value;
+            let rate = document.getElementById('interestRate').value / 100 / 12;
+            let tenure = document.getElementById('loanTenure').value * 12;
+            let payment = (loan * rate) / (1 - Math.pow(1 + rate, -tenure));
+            document.getElementById('result').innerText = `Monthly Payment: RM ${payment.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
