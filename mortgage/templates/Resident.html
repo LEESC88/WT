@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <script src="{{url_for('static', filename='calculation.js')}}"></script>
+</head>
+<body>
+    <header>
+        <h1>Mortgage Calculator</h1>
+    </header>
+    
+    <section id="calculator">
+        <h2>Advanced Mortgage Calculator</h2>
+        <label>Loan Amount (RM): <input type="number" id="loanAmount" required></label>
+        <label>Interest Rate (%): <input type="number" step="0.01" id="interestRate" required></label>
+        <label>Loan Tenure (years): <input type="number" id="loanTenure" required></label>
+        <label>Down Payment (RM): <input type="number" id="downPayment"></label>
+        <label>Extra Monthly Payment (RM): <input type="number" id="extraPayment"></label>
+        <button onclick="calculateMortgage()">Calculate</button>
+        <h3>Results:</h3>
+        <p id="result"></p>
+        <p id="totalInterest"></p>
+        <p id="totalPayment"></p>
+        <p id="payoffTime"></p>
+    </section>
+    
+</body>
+</html>
