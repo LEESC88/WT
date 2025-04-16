@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor Plan</title>
+    <link rel="stylesheet" href="floor_plan.css">
+</head>
+<body>
+
+<div id="container">
+    <div id="floor-plan">
+        <img src="floorplan.png" alt="Floor Plan" width="420px">
+
+        <!-- Floor Plan 上的unit,鼠标划上去，显示和消失它的preview,包括它的area ,点击啦 direct 去到 什么上面html -->
+
+        <div id="unit1" style="top: 10px; left: 13px;" 
+             onmouseover="showPreview(event, 'unit1-preview')" 
+             onmouseout="hidePreview('unit1-preview')" 
+             onclick="redirectToUnit('unit1.html')"> <!-- 过后改成 你的html名字就可以了-->
+        </div>
+
+        <div id="unit2" style="top: 138px; left: 265px;" 
+            onmouseover="showPreview(event, 'unit2-preview')" 
+            onmouseout="hidePreview('unit2-preview')" 
+            onclick="redirectToUnit('unit2.html')">
+        </div>
+
+        <div id="unit3" style="top: 266px; left: 235px;" 
+            onmouseover="showPreview(event, 'unit3-preview')" 
+            onmouseout="hidePreview('unit3-preview')" 
+            onclick="redirectToUnit('unit3.html')">
+        </div>
+
+        <div id="unit4" style="top: 268px; left: 13px;" 
+            onmouseover="showPreview(event, 'unit4-preview')" 
+            onmouseout="hidePreview('unit4-preview')" 
+            onclick="redirectToUnit('unit4.html')">
+        </div>
+        
+        <div id="unit1-preview" class="preview" style="top: 40px; left: 200px;"> <!--Contoh 而已，如果有新的图片可以代替它们-->
+            <img src="https://www.shutterstock.com/shutterstock/photos/1956982738/display_1500/stock-photo-modern-and-luxurious-bedroom-with-white-ceiling-and-wood-accents-with-views-of-tall-building-and-1956982738.jpg" alt="Unit 1 Preview" width="150px">
+            <p style="font-size: 50%;"><b>Unit 1</b><br>total area: 500 sqft (≈46.45 m²)</p>
+        </div>
+
+        <div id="unit2-preview" class="preview" style="top: 138px; left: 400px;">
+            <img src="https://st3.depositphotos.com/1041088/35591/i/1600/depositphotos_355916116-stock-photo-absolute-beautiful-luxury-living-room.jpg" alt="Unit 2 Preview" width="150px">
+            <p style="font-size: 50%;"><b>Unit 2</b><br>total area: 180 sqft (≈16.7 m²)</p>
+        </div>
+
+        <div id="unit3-preview" class="preview" style="top: 266px; left: 380px;">
+            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-878763352651810148/original/e17eb011-ae1c-4fb4-b3d8-08948a65b11d.jpeg?im_w=1200" alt="Unit 3 Preview" width="150px">
+            <p style="font-size: 50%;"><b>Unit 3</b><br>total area: 200 sqft (≈18.6 m²)</p>
+        </div>
+
+        <div id="unit4-preview" class="preview" style="top: 266px; left: 180px;">
+            <img src="https://i.pinimg.com/736x/f5/a9/4c/f5a94c8280ead7e780f2aa9c7c51543a.jpg" alt="Unit 4 Preview" width="150px">
+            <p style="font-size: 50%;"><b>Unit 4</b><br>total area: 220 sqft (≈20.4 m²)</p>
+        </div>
+    </div>
+
+    <!-- Project detail 的那个格子-->
+
+    <div id="details">
+        <table>
+            <tr>
+                <th>Project Details</th>
+            </tr>
+
+            <tr>
+                <th id="title">Project Name:</th>
+            </tr>
+            <tr>
+                <td>Cinta Project</td>
+            </tr>
+
+            <tr>
+                <th id="title">Building Structure:</th>
+            </tr>
+            <tr>
+                <td id="describe">
+                <ul>
+                    <li>6 levels in total</li>
+                </ul>
+                </td>
+            </tr>
+            <tr>
+                <td id="describe">
+                <ul>
+                    <li>Each level contains four different unique apartment unit</li>
+                </ul>
+                </td>
+            </tr>
+            <tr>
+                <td id="describe">
+                <ul>
+                    <li> Total area per level: 1,200 square feet (≈111.5 m²)</li>
+                </ul>
+                </td>
+            </tr>
+            <tr>
+                <td id="describe">
+                <ul>
+                    <li> Includes approx. 100 sqft (9.3 m²) of shared public space (elevator + stairs)</li>
+                </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <th id="title">Key Features</th>
+            </tr>
+            <tr>
+                <td id="describe">
+                <ul>
+                    <li>Elevator access for convenience on all levels</li>
+                </ul>
+                </td>
+            </tr>
+            <tr>
+                <td id="describe">
+                <ul>
+                    <li>Efficient use of space with modern layouts</li>
+                </ul>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Download Button -->
+
+        <div id="download">
+            <a href="floorplan.pdf" target="_blank">
+                <button onclick="openAndDownload()">Download Floor Plan (PDF)</button>
+            </a>
+        </div>
+    </div>
+
+    <!--Sidebar 旁边灰色的就是了-->
+
+    <div id="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="Home.html">Overview</a></li>
+            <li><a href="floorplan.html">Floor Plan</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Units</a></li>
+            <li><a href="ContactPage.html">Contact us</a></li>
+        </ul>
+    </div>
+
+</div>
+
+
+    <script src="floor_plan.js"></script>
+
+</body>
+</html>

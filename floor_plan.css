@@ -1,0 +1,151 @@
+body
+{
+background-color: grey;
+}
+ #container 
+{
+display: flex;
+gap: 60px;
+}
+
+    #floor-plan 
+    {
+        position: relative;
+        width: 400px;
+        margin-top: 40px;
+        margin-left: 40px;
+    }
+
+/* Floor plan 上的unit,它们的形状 ，还有当鼠标移动到它们上面时 会出现的 block (preview)的css */
+
+
+    #unit1
+    {
+        position: absolute;
+        width: 394px;
+        height: 261.2px;
+        background-color: rgba(85, 85, 86, 0.5);
+        cursor: pointer;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 49.5%, 56.2% 49.5%, 56.2% 42%,39% 42%, 39% 100%, 0% 100%);
+    } 
+    #unit2
+    {
+        position: absolute;
+        width: 142px;
+        height: 135px;
+        background-color: rgba(21, 21, 126, 0.5);
+        cursor: pointer;
+        clip-path: polygon(0% 0%, 100% 0% ,100% 100%, 0% 100%);
+    }
+    #unit3
+    {
+        position: absolute;
+        width: 172px;
+        height: 145px;
+        background-color: rgba(167, 201, 180, 0.5);
+        cursor: pointer;
+        clip-path: polygon(0% 0%, 18% 0%,18% 2.5%, 50% 2.5%,50% 4.8%,100% 4.8%, 100% 100%, 0% 100%);
+    }
+    #unit4
+    {
+        position: absolute;
+        width: 224px;
+        height: 143px;
+        background-color: rgba(181, 44, 73, 0.5);
+        cursor: pointer;
+        clip-path: polygon(0% 2%, 32% 2%,32% 0%,99% 0%, 99% 100%, 0% 100% );
+    }
+    .preview 
+    {
+        display: none;
+        position: absolute;
+        width: 150px;
+        padding: 2px;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Project Detail 的那个格子，介绍我们的building structure 什么的*/
+
+        #details
+        {
+            background-color: darkgreen;
+            width: 360px;
+            height:360px;
+            padding: auto;
+            margin-top: 50px;
+            margin-left: 30px;
+            border-radius: 20px;
+        }
+        #title
+        {
+            text-align: left;
+        }
+        ul
+        {
+            margin:0px;
+        }
+        #describe
+        {
+            font-size: 85%;
+        }
+
+/* Download button 的部分了 */
+
+            #download
+            {   
+                margin-top: 60px;
+            }
+
+            #download button
+            {   
+                background-color: lightgreen;
+                border-width: 1px;
+                border-color: lightgray;
+                border-radius: 20px;
+                width: 250px;
+                height: 50px;
+                font-size: 105%;
+            }
+            #download button:hover
+            {
+                background-color: #6b6262;
+            }
+
+
+/* Sidebar 这边的部分了*/
+
+
+        #sidebar 
+    {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 180px;
+        height: 100vh;
+        background-color: #6b6262;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    #sidebar h2 {
+        text-align: center;
+        color:rgb(51, 45, 45);
+    }
+
+    #sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    #sidebar ul li {
+        margin-bottom: 10px;
+    }
+
+    #sidebar a {
+        color: black;
+        text-decoration: none;
+    }
